@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enter Marks</title>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script>
+      function datasave() {
+        var rollnumber = document.getElementById("regnumber").value;
+        var name = document.getElementById("pername").value;
+        var marks_11 = document.getElementById("marks11").value;
+        var marks_12 = document.getElementById("marks12").value;
+        var marks_21 = document.getElementById("marks21").value;
+        var marks_22 = document.getElementById("marks22").value;
+        var marks_31 = document.getElementById("marks31").value;
+        var marks_32 = document.getElementById("marks32").value;
+        var marks_41 = document.getElementById("marks41").value;
+        var marks_42 = document.getElementById("marks42").value;
+        if (rollnumber && name) {
+          var data = {
+            rollnumber,
+            name,
+            marks_11,
+            marks_12,
+            marks_21,
+            marks_22,
+            marks_31,
+            marks_32,
+            marks_41,
+            marks_42,
+          };
+
+          if (localStorage.getItem("details") == null) {
+            localStorage.setItem("details", JSON.stringify([]));
+          }
+          var old_details = JSON.parse(localStorage.getItem("details"));
+          old_details.push(data);
+          localStorage.setItem("details", JSON.stringify(old_details));
+            document.getElementById("errormsg").style.display = 'none';
+          window.location.href = "display.html";
+        }
+        else{
+            document.getElementById("errormsg").innerHTML="Please enter name and reg no."
+        }
+      }
+    </script>
+
+    <div class="add">
+      <label class="heading">ADD MARKS</label>
+    </div>
+
+    <div class="mains">
+      <a href="index.html"><div class="homePage">Go to Home page</div></a>
+      <form id="forms">
+        <fieldset>
+          <legend>WELCOME</legend>
+          <table>
+            <tr>
+              <td>
+                <label for="regno">Registration Number *</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="regno"
+                  id="regnumber"
+                  class="maininput"
+                  placeholder="Enter registration number"
+                  required
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="name">Name *</label>
+              </td>
+
+              <td class="input">
+                <input
+                  type="text"
+                  name="name"
+                  id="pername"
+                  placeholder="Enter name"
+                  class="maininput"
+                  required
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="mark1">1-1 marks</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="mark1"
+                  id="marks11"
+                  placeholder="Enter 1-1 marks"
+                  class="maininput"
+                  required
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="mark2">1-2 marks</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="mark2"
+                  id="marks12"
+                  placeholder="Enter 1-2 marks"
+                  class="maininput"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="mark3">2-1 marks</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="mark3"
+                  id="marks21"
+                  placeholder="Enter 2-1 marks"
+                  class="maininput"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="mark4">2-2 marks</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="mark4"
+                  id="marks22"
+                  placeholder="Enter 2-2 marks"
+                  class="maininput"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="mark5">3-1 marks</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="mark5"
+                  id="marks31"
+                  placeholder="Enter 3-1 marks"
+                  class="maininput"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="mark6">3-2 marks</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="mark6"
+                  id="marks32"
+                  placeholder="Enter 3-2 marks"
+                  class="maininput"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="mark7">4-1 marks</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="mark7"
+                  id="marks41"
+                  placeholder="Enter 4-1 marks"
+                  class="maininput"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <label for="mark8">4-2 marks</label>
+              </td>
+              <td class="input">
+                <input
+                  type="text"
+                  name="mark8"
+                  id="marks42"
+                  class="maininput"
+                  placeholder="Enter 4-2 marks"
+                />
+              </td>
+            </tr>
+          </table>
+          <div id="errormsg"></div>
+          <div class="submit">
+            <input
+              type="button"
+              value="Submit"
+              onclick="datasave()"
+              class="mainsubmit"
+            />
+            
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

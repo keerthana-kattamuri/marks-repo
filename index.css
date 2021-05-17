@@ -1,0 +1,101 @@
+label {
+  font-size: 17px;
+  margin: 5px;
+  padding: 5px;
+  font-family: cursive;
+}
+legend {
+  font-size: 20px;
+  font-weight: bold;
+}
+input {
+  margin: 5px;
+  padding: 5px;
+}
+.mains {
+  width: 45%;
+  margin: auto;
+  margin-top: 15px;
+}
+.add {
+  background-color: #0d6efd;
+  height: 40px;
+  text-align: center;
+}
+.add {
+  padding-top: 10px;
+  font-family: sans-serif;
+}
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.heading {
+  color: white;
+  font-family: "Times New Roman";
+  font-size: 25px;
+}
+.input {
+  text-align: center;
+}
+table {
+  width: 100%;
+}
+.maininput {
+  height: 20px;
+  width: 300px;
+}
+.submit {
+  text-align: center;
+  margin-top: 4px;
+}
+.addM {
+  background-color: #0d6efd;
+  padding: 6px;
+  color: white;
+  border: none;
+}
+.addM:hover {
+  color: #0d6efd;
+  background-color: white;
+  text-decoration: none;
+}
+.mainsubmit {
+  width: 100px;
+}
+.homePage {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.displaymain {
+  width: 45%;
+  margin: auto;
+  margin-top: 15px;
+}
+#rollNum {
+  width: 240px;
+}
+#submit {
+  width: 100px;
+}
+.jscontent {
+  border: 1px solid black;
+  padding-left: 20px;
+  margin: auto;
+  width: 350px;
+  margin-top: 15px;
+}
+.jscontent td {
+  padding: 8px;
+  font-size: 16px;
+  font-family: cursive;
+}
+#errormsg{
+    color: red;
+    text-align: center;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display marks</title>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script>
+      function myFunction() {
+        var rollNo = document.getElementById("rollNum").value;
+        var d = JSON.parse(localStorage.getItem("details"));
+        var h =
+          d && d.length >= 1 && d.filter((i) => i.rollnumber === rollNo)[0];
+        if (h == undefined) {
+          document.getElementById("display").innerHTML = `No such roll number`;
+        } else {
+          document.getElementById("display").innerHTML = ` 
+                <table class="jscontent">
+                  <tr>
+                    <td>
+                      Roll Number
+                    </td>
+                    <td>
+                      ${h.rollnumber}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Name
+                    </td>
+                    <td>
+                      ${h.name}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      1-1 marks
+                    </td>
+                    <td>
+                      ${h.marks_11}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      1-2 marks
+                    </td>
+                    <td>
+                      ${h.marks_12}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      2-1 marks
+                    </td>
+                    <td>
+                      ${h.marks_21}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      2-2 marks
+                    </td>
+                    <td>
+                      ${h.marks_22}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      3-1 marks
+                    </td>
+                    <td>
+                      ${h.marks_31}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      3-2 marks
+                    </td>
+                    <td>
+                      ${h.marks_32}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      4-1 marks
+                    </td>
+                    <td>
+                      ${h.marks_41}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      4-2 marks
+                    </td>
+                    <td>
+                      ${h.marks_42}
+                    </td>
+                  </tr>
+
+                </table>`;
+        }
+      }
+    </script>
+    <div class="add">
+      <label class="heading">DISPLAY MARKS</label>
+    </div>
+    <div class="displaymain">
+      <a href="index.html"><div class="homePage">Go to Home page</div></a>
+      <div class="enteringno">
+        <label>Enter registration number</label>
+        <input
+          type="text"
+          id="rollNum"
+          placeholder="Enter Registration number"
+        />
+        <button class="addM" onclick="myFunction()">Submit</button>
+      </div>
+      <div id="display"></div>
+    </div>
+  </body>
+</html>

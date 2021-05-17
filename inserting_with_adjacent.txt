@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display marks</title>
+  </head>
+  <body>
+    <script>
+      var data = [
+        { rollNo: "1", marks_11: 8.9 },
+        { rollNo: "2", marks_11: 9.7 },
+      ];
+      var old;
+      function myFunction() {
+        var rollNo = document.getElementById("rollNum").value;
+        var h = document.getElementById("display");
+        var m = document.getElementById("marks");
+        var k = document.getElementById("noroll");
+        if (m == null || old !== rollNo) {
+          if (m !== null ) {
+            m.remove();
+          }
+          if ( k !== null){
+              k.remove();
+          }
+         console.log(k);
+          var d = data.filter((i) => i.rollNo === rollNo)[0];
+          console.log(d);
+          if(d == undefined){
+              h.insertAdjacentHTML("afterend","<div id='noroll'>No roll number</div>"); 
+          }
+          else{         
+            h.insertAdjacentHTML(
+            "afterend",
+            `<div id="marks">
+                 <p>Your Roll num: ${d.rollNo}</p>
+                 <p>Your 1-1 marks are: ${d.marks_11}</p>
+                 <p>Your 1-2 marks are:8.5 </p>
+                 <p>Your 2-1 marks are: 9</p>
+                 <p>Your 2-2 marks are:8</p>
+                 <p>Your 3-1 marks are:7</p>
+                 <p>Your 3-2 marks are:9</p>
+                 <p>Your 4-1 marks are:7</p>
+                 <p>Your 4-2 marks are:6</p>
+            </div>`
+        
+          );
+          }
+        }
+        old = rollNo;
+      }
+    </script>
+    <div>
+      <label> Enter registration number</label>
+      <input type="text" id="rollNum" />
+      <input type="submit" onclick="myFunction()" />
+      <div id="display"></div>
+    </div>
+  </body>
+</html>
